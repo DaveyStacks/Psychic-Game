@@ -21,6 +21,7 @@
 		
 		if(userGuess === computerGuess) {
 			alert('You WIN!');
+			wins++;
 		}
 
 		if(userGuess!== computerGuess) {
@@ -30,6 +31,12 @@
 		if(chances < 1) {
 			alert('You Lose');
 		}
+
+		var html =
+			"<p> Wins: " + wins + "</p>" +
+			"<p> Losses: " + losses + "</p>"
+
+			document.querySelector('#stats').innerHTML = html;
 	}
 
 
