@@ -43,6 +43,12 @@
 			newGame();
 		}
 
+		if(letters.indexOf(userGuess) === -1 ) {
+			alert('Listen, It says A LETTER!!');
+			chances++;
+		}
+			
+		
 
 		var html =
 			"<p> Wins: " + wins + "</p>" +
