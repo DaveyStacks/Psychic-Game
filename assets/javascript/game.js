@@ -13,6 +13,13 @@
 	var computerGuess = letters[Math.floor(Math.random() * letters.length)];
 		console.log(computerGuess);
 
+	function newGame() {
+		chances = 10;
+		guesses =[];
+		computerGuess = letters[Math.floor(Math.random() * letters.length)];
+		console.log(computerGuess) ;
+	}
+
 	//create function for onKeyUp
 	document.onkeyup = function() {
 		//names userGuess and sets to a string and sets to lower case
@@ -22,14 +29,17 @@
 		if(userGuess === computerGuess) {
 			alert('You WIN!');
 			wins++;
+			newGame();
 		}
 
-		if(userGuess!== computerGuess) {
+		if(userGuess !== computerGuess) {
 			chances--;
 		}
 
 		if(chances < 1) {
 			alert('You Lose');
+			losses++;
+			newGame();
 		}
 
 		var html =
