@@ -9,15 +9,14 @@
 	var losses = 0;
 	//variable for guesses thus far
 	var guesses = [];
+
 	//names computerGuess and uses random math to select one index of letters array
 	var computerGuess = letters[Math.floor(Math.random() * letters.length)];
-		console.log(computerGuess);
 
 	function newGame() {
 		chances = 10;
 		guesses =[];
 		computerGuess = letters[Math.floor(Math.random() * letters.length)];
-		console.log(computerGuess) ;
 	}
 
 
@@ -25,9 +24,8 @@
 	document.onkeyup = function() {
 		//names userGuess and sets to a string and sets to lower case
 		var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-		console.log(userGuess);
 		guesses.push(userGuess);
-		console.log(guesses);
+		
 		
 		if(userGuess === computerGuess) {
 			alert('You WIN!');
@@ -45,10 +43,11 @@
 			newGame();
 		}
 
-		
+
 		var html =
 			"<p> Wins: " + wins + "</p>" +
-			"<p> Losses: " + losses + "</p>"
+			"<p> Losses: " + losses + "</p>" +
+			"<p> Guesses Remaining: " + chances + "</p>"
 
 			document.querySelector('#stats').innerHTML = html;
 
