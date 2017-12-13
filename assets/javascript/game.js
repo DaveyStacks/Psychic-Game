@@ -20,11 +20,14 @@
 		console.log(computerGuess) ;
 	}
 
+
 	//create function for onKeyUp
 	document.onkeyup = function() {
 		//names userGuess and sets to a string and sets to lower case
 		var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 		console.log(userGuess);
+		guesses.push(userGuess);
+		console.log(guesses);
 		
 		if(userGuess === computerGuess) {
 			alert('You WIN!');
@@ -42,11 +45,21 @@
 			newGame();
 		}
 
+		
 		var html =
 			"<p> Wins: " + wins + "</p>" +
 			"<p> Losses: " + losses + "</p>"
 
 			document.querySelector('#stats').innerHTML = html;
+
+		var guessLog =
+			"<p> Your guesses thus far...  " + guesses + " </p>"
+
+			document.querySelector('#logger').innerHTML = guessLog;
+
+		
+
+
 	}
 
 
